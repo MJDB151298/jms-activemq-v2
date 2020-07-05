@@ -19,16 +19,16 @@ public class Productor {
     static Random random;
     static Format format = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss");
 
-    public static void enviarMensaje(String cola) throws JMSException {
+    public static void enviarMensaje(String topicName) throws JMSException {
         ActiveMQConnectionFactory factory = new ActiveMQConnectionFactory("failover:tcp://localhost:61616");
 
         Connection connection = factory.createConnection("admin", "admin");
         connection.start();
 
         Session session = connection.createSession(false, Session.AUTO_ACKNOWLEDGE);
-        Queue queue = session.createQueue(cola);
+        Topic topic = session.createTopic(topicName);
 
-        MessageProducer producer = session.createProducer(queue);
+        MessageProducer producer = session.createProducer(topic);
 
         while(true){
             try{

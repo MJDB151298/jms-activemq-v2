@@ -9,12 +9,12 @@ public class Consumidor {
     ActiveMQConnectionFactory factory;
     Connection connection;
     Session session;
-    Queue queue;
+    Topic topic;
     MessageConsumer consumer;
-    String cola;
+    String topicName;
 
-    public Consumidor(String cola){
-        this.cola = cola;
+    public Consumidor(String topicName){
+        this.topicName = topicName;
     }
 
     public void conectar() throws JMSException {
@@ -27,9 +27,9 @@ public class Consumidor {
         session = connection.createSession(false, Session.AUTO_ACKNOWLEDGE);
 
         //Creando cola
-        queue = session.createQueue(cola);
+        topic = session.createTopic(topicName);
         System.out.println("Esperando mensajes...");
-        consumer = session.createConsumer(queue);
+        consumer = session.createConsumer(topic);
         consumer.setMessageListener(message -> {
             TextMessage textMessage = (TextMessage) message;
             try {
