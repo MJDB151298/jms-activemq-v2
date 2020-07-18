@@ -1,5 +1,6 @@
 package jms;
 
+import Controllers.ClienteController;
 import org.apache.activemq.ActiveMQConnectionFactory;
 import org.w3c.dom.Text;
 
@@ -33,6 +34,7 @@ public class Consumidor {
         consumer.setMessageListener(message -> {
             TextMessage textMessage = (TextMessage) message;
             try {
+                ClienteController.enviarMensaje(textMessage.getText());
                 System.out.println(textMessage.getText());
             } catch (JMSException e) {
                 e.printStackTrace();

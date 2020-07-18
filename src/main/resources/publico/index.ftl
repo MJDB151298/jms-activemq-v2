@@ -1,7 +1,7 @@
 <!DOCTYPE html>
-<html lang="sp" xmlns:th="http://www.thymeleaf.org" xmlns:spring="http://www.w3.org/1999/XSL/Transform">
+<html lang="sp" xmlns:spring="http://www.w3.org/1999/XSL/Transform">
 
-<head th:fragment="css"> 
+<head>
 
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -19,115 +19,30 @@
     <!-- Dashboard Core -->
     <link href="/dashboard.css" rel="stylesheet" />
 
-    <script src="/jquery.min.js"></script>
-    <script src="http://canvasjs.com/assets/script/canvasjs.min.js"></script>
-    <script>
-        $(document).ready(function () {
-            var webSocket;
-            var dps = [];
-            var temp = 0;
-            var hum = 0;
-            var dps2 = [];// dataPoints
-            var chart = new CanvasJS.Chart("chartContainer", {
-                zoomEnabled: true,
-                title :{
-                    text: "Sensor Temperatura"
-                },
-                axisX:{
-                    title: "Fecha",
-                    interval: 30,
-                    intervalType: "second"
-                },
-                axisY: {
-                    title: "Temperatura",
-                    includeZero: false
-                },
-                data: [{
-                    type: "line",
-                    dataPoints: dps
-                }]
-            });
-            var chart2 = new CanvasJS.Chart("chartContainer2", {
-                zoomEnabled: true,
-                title :{
-                    text: "Sensor Humedad"
-                },
-                axisX:{
-                    title: "Fecha",
-                    interval: 30,
-                    intervalType: "second"
-                },
-                axisY: {
-                    title: "Humedad",
-                    includeZero: false
-                },
-                data: [{
-                    type: "line",
-                    dataPoints: dps2
-                }]
-            });
-            var updateInterval = 1000;
-            var dataLength = 20; // number of dataPoints visible at any point
-            var updateChart = function (dataPoints) {
-                var dp = JSON.parse(dataPoints);
-                console.log(dp);
-                dps.push({
-                    label: dp.fechaGeneracion,
-                    y: dp.temperatura
-                });
-                dps2.push({
-                    label: dp.fechaGeneracion,
-                    y: dp.humedad
-                });
-                temp = parseInt(document.getElementById("temp").innerText) + 1;
-                document.getElementById("temp").innerText = temp.toString();
-                hum = parseInt(document.getElementById("hum").innerText) + 1;
-                document.getElementById("hum").innerText = temp.toString();
-                chart.render();
-                chart2.render();
-            };
-            function socketConnect() {
-                webSocket = new WebSocket("ws://" + location.hostname + ":" + location.port + "/lecturaSocket");
-                webSocket.onmessage = function (datos) {
-                    updateChart(datos.data);
-                };
-            }
-            function connect() {
-                if (!webSocket || webSocket.readyState === 3) {
-                    socketConnect();
-                }
-            }
-            updateChart(dataLength);
-            setInterval(connect, updateInterval);
-        })
-    </script>
-
 </head>
 
 <body id="page-top">
 
 <!-- Navigation -->
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top" id="mainNav" th:fragment="navigation">
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top" id="mainNav">
     <div class="container">
-        <a class="navbar-brand js-scroll-trigger" href="#page-top" th:text="#{inicio}">Inicio</a>
+        <a class="navbar-brand js-scroll-trigger" href="#page-top">Inicio</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarResponsive">
             <ul class="navbar-nav ml-auto">
                 <li class="nav-item">
-                    <a class="nav-link" href="/" th:text="#{inicio_sesion}"></a>
+                    <a class="nav-link" href="/"></a>
                 </li>
             </ul>
         </div>
     </div>
 </nav>
 
-<header class="bg-primary text-white" th:fragment="header">
+<header class="bg-primary text-white">
     <div class="container text-center">
-<!--        <h1 th:text="#{bienvenida}"></h1>-->
-        <h1 th:text="BarCamp2020"></h1>
-<!--        <p class="lead" th:text="#{slogan}"></p>-->
+        <h1>BarCamp2020</h1>
     </div>
 </header>
 
@@ -136,7 +51,7 @@
         <div class="header py-4">
             <div class="container">
                 <div class="d-flex">
-                    <a class="header-brand" href="./index.html">
+                    <a class="header-brand" href="index.ftl">
                         <h3 class="card-title">Retriever de temperatura y humedad</h3>
                     </a>
                 </div>
@@ -198,5 +113,88 @@
         </div>
     </div>
 </div>
+
+<script src="/jquery.min.js"></script>
+<script src="http://canvasjs.com/assets/script/canvasjs.min.js"></script>
+<script>
+    var webSocket;
+    var dps = [];
+    var temp = 0;
+    var hum = 0;
+    var dps2 = [];// dataPoints
+    var chart = new CanvasJS.Chart("chartContainer", {
+        zoomEnabled: true,
+        title :{
+            text: "Sensor Temperatura"
+        },
+        axisX:{
+            title: "Fecha",
+            interval: 30,
+            intervalType: "second"
+        },
+        axisY: {
+            title: "Temperatura",
+            includeZero: false
+        },
+        data: [{
+            type: "line",
+            dataPoints: dps
+        }]
+    });
+    var chart2 = new CanvasJS.Chart("chartContainer2", {
+        zoomEnabled: true,
+        title :{
+            text: "Sensor Humedad"
+        },
+        axisX:{
+            title: "Fecha",
+            interval: 30,
+            intervalType: "second"
+        },
+        axisY: {
+            title: "Humedad",
+            includeZero: false
+        },
+        data: [{
+            type: "line",
+            dataPoints: dps2
+        }]
+    });
+    var updateInterval = 1000;
+    var dataLength = 20; // number of dataPoints visible at any point
+    var updateChart = function (dataPoints) {
+        var dp = JSON.parse(dataPoints);
+        console.log(dp);
+        dps.push({
+            label: dp.fecha,
+            y: dp.temperatura
+        });
+        dps2.push({
+            label: dp.fecha,
+            y: dp.humedad
+        });
+        temp = parseInt(document.getElementById("temp").innerText) + 1;
+        document.getElementById("temp").innerText = temp.toString();
+        hum = parseInt(document.getElementById("hum").innerText) + 1;
+        document.getElementById("hum").innerText = temp.toString();
+        chart.render();
+        chart2.render();
+    };
+    function socketConnect() {
+        webSocket = new WebSocket("ws://" + location.hostname + ":" + location.port + "/sensor_read");
+        webSocket.onmessage = function (datos) {
+            console.log("I am making a connection");
+            updateChart(datos.data);
+        };
+    }
+    function connect() {
+        if (!webSocket || webSocket.readyState === 3) {
+            socketConnect();
+
+        }
+    }
+    updateChart(dataLength);
+    setInterval(connect, updateInterval);
+</script>
 </body>
 </html>

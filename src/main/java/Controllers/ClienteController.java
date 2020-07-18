@@ -5,6 +5,7 @@ import freemarker.template.Configuration;
 import jms.Consumidor;
 import spark.ModelAndView;
 import org.eclipse.jetty.websocket.api.Session;
+import spark.Spark;
 import spark.template.freemarker.FreeMarkerEngine;
 
 import javax.jms.JMSException;
@@ -22,18 +23,19 @@ public class ClienteController {
     public static void main(String[] args) throws JMSException {
         Configuration configuration = new Configuration(Configuration.getVersion());
         //staticFiles.location("/publico/static");
-        configuration.setClassForTemplateLoading(ClienteController.class, "/publico/templates");
+        configuration.setClassForTemplateLoading(ClienteController.class, "/publico");
         FreeMarkerEngine freeMarkerEngine = new FreeMarkerEngine(configuration);
 
 
         String cola = "notificaciones_sensores";
-        webSocket("/lecturaSocket", WebSocketUtil.class);
-       /**get("/", (request, response) -> {
+        webSocket("/sensor_read", WebSocketUtil.class);
+        Spark.get("/", (request, response) -> {
             Map<String, Object> attributes = new HashMap<>();
             return new ModelAndView(attributes, "index.ftl");
-        }, freeMarkerEngine);**/
+        }, freeMarkerEngine);
         Consumidor consumidor = new Consumidor(cola);
         consumidor.conectar();
+
 
     }
     /*Método para enviar el mensaje a la sesión del Web Socket a ser utilizado en el cliente.*/
