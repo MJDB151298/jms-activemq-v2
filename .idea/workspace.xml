@@ -1,8 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="0c059690-7b93-4baf-b43e-3b5f7f0ad779" name="Default Changelist" comment="View">
+    <list default="true" id="0c059690-7b93-4baf-b43e-3b5f7f0ad779" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/Dockerfile" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docker-compose.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/5.2.1/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.2.1/executionHistory/executionHistory.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/5.2.1/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.2.1/executionHistory/executionHistory.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/5.2.1/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.2.1/fileHashes/fileHashes.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/5.2.1/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.2.1/fileHashes/fileHashes.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/index.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -16,6 +25,37 @@
     <projectState path="$PROJECT_DIR$">
       <ProjectState />
     </projectState>
+  </component>
+  <component name="ExternalProjectsManager">
+    <system id="GRADLE">
+      <state>
+        <task path="$PROJECT_DIR$">
+          <activation />
+        </task>
+        <projects_view>
+          <tree_state>
+            <expand>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="jms-activemq-v2" type="f1a62948:ProjectNode" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="jms-activemq-v2" type="f1a62948:ProjectNode" />
+                <item name="Tasks" type="e4a08cd1:TasksNode" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="jms-activemq-v2" type="f1a62948:ProjectNode" />
+                <item name="Tasks" type="e4a08cd1:TasksNode" />
+                <item name="build" type="c8890929:TasksNode$1" />
+              </path>
+            </expand>
+            <select />
+          </tree_state>
+        </projects_view>
+      </state>
+    </system>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -47,7 +87,7 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../emergentes_tarea_sentencias_mongodb" />
+    <property name="last_opened_file_path" value="$USER_HOME$/IdeaProjects/dockercomposer" />
     <property name="settings.editor.selected.configurable" value="configurable.group.appearance" />
   </component>
   <component name="RecentsManager">
@@ -55,6 +95,32 @@
       <recent name="$PROJECT_DIR$/src/main/resources/static" />
       <recent name="$PROJECT_DIR$/src/main/resources" />
     </key>
+  </component>
+  <component name="RunManager">
+    <configuration name="jms-activemq-v2 [jar]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value="jar" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <GradleScriptDebugEnabled>true</GradleScriptDebugEnabled>
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Gradle.jms-activemq-v2 [jar]" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="ServiceViewManager">
     <option name="viewStates">
@@ -81,7 +147,9 @@
       <workItem from="1593918303858" duration="1104000" />
       <workItem from="1593923699186" duration="6061000" />
       <workItem from="1594332932581" duration="37000" />
-      <workItem from="1594482785990" duration="446000" />
+      <workItem from="1594482785990" duration="767000" />
+      <workItem from="1594591562535" duration="274000" />
+      <workItem from="1596836181423" duration="884000" />
     </task>
     <task id="LOCAL-00001" summary="View">
       <created>1593929571162</created>
@@ -90,7 +158,14 @@
       <option name="project" value="LOCAL" />
       <updated>1593929571162</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="View">
+      <created>1594483320763</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1594483320763</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -101,24 +176,42 @@
     <option name="LAST_COMMIT_MESSAGE" value="View" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="2520" y="55" width="1077" height="996" key="CommitChangelistDialog2" timestamp="1594483234134">
+    <state x="2520" y="55" width="1047" height="996" key="CommitChangelistDialog2" timestamp="1594483320035">
       <screen x="1920" y="0" width="1920" height="1080" />
     </state>
     <state x="833" y="58" width="1077" height="996" key="CommitChangelistDialog2/1920.0.1920.1080/0.30.1920.1050@0.30.1920.1050" timestamp="1593929570448" />
-    <state x="2520" y="55" key="CommitChangelistDialog2/1920.0.1920.1080/0.30.1920.1050@1920.0.1920.1080" timestamp="1594483234134" />
-    <state x="743" y="298" width="424" height="487" key="FileChooserDialogImpl" timestamp="1594332968613">
-      <screen x="0" y="30" width="1920" height="1050" />
+    <state x="2520" y="55" width="1047" height="996" key="CommitChangelistDialog2/1920.0.1920.1080/0.30.1920.1050@1920.0.1920.1080" timestamp="1594483320035" />
+    <state x="2663" y="276" width="424" height="487" key="FileChooserDialogImpl" timestamp="1596836280555">
+      <screen x="1920" y="0" width="1920" height="1080" />
     </state>
     <state x="743" y="298" width="424" height="487" key="FileChooserDialogImpl/1920.0.1920.1080/0.30.1920.1050@0.30.1920.1050" timestamp="1594332968613" />
-    <state x="2555" y="171" width="800" height="569" key="Vcs.Push.Dialog.v2" timestamp="1594483259776">
+    <state x="2663" y="276" key="FileChooserDialogImpl/1920.0.1920.1080/0.30.1920.1050@1920.0.1920.1080" timestamp="1596836280555" />
+    <state width="1870" height="250" key="GridCell.Tab.0.bottom" timestamp="1596836976119">
+      <screen x="1920" y="0" width="1920" height="1080" />
+    </state>
+    <state width="1870" height="250" key="GridCell.Tab.0.bottom/1920.0.1920.1080/0.30.1920.1050@1920.0.1920.1080" timestamp="1596836976119" />
+    <state width="1870" height="250" key="GridCell.Tab.0.center" timestamp="1596836976118">
+      <screen x="1920" y="0" width="1920" height="1080" />
+    </state>
+    <state width="1870" height="250" key="GridCell.Tab.0.center/1920.0.1920.1080/0.30.1920.1050@1920.0.1920.1080" timestamp="1596836976118" />
+    <state width="1870" height="250" key="GridCell.Tab.0.left" timestamp="1596836976118">
+      <screen x="1920" y="0" width="1920" height="1080" />
+    </state>
+    <state width="1870" height="250" key="GridCell.Tab.0.left/1920.0.1920.1080/0.30.1920.1050@1920.0.1920.1080" timestamp="1596836976118" />
+    <state width="1870" height="250" key="GridCell.Tab.0.right" timestamp="1596836976118">
+      <screen x="1920" y="0" width="1920" height="1080" />
+    </state>
+    <state width="1870" height="250" key="GridCell.Tab.0.right/1920.0.1920.1080/0.30.1920.1050@1920.0.1920.1080" timestamp="1596836976118" />
+    <state x="2555" y="171" width="800" height="569" key="Vcs.Push.Dialog.v2" timestamp="1594483492029">
       <screen x="1920" y="0" width="1920" height="1080" />
     </state>
     <state x="1110" y="272" width="800" height="569" key="Vcs.Push.Dialog.v2/1920.0.1920.1080/0.30.1920.1050@0.30.1920.1050" timestamp="1593929576251" />
-    <state x="2555" y="171" key="Vcs.Push.Dialog.v2/1920.0.1920.1080/0.30.1920.1050@1920.0.1920.1080" timestamp="1594483259776" />
-    <state x="610" y="367" key="com.intellij.ide.util.TipDialog" timestamp="1594332934411">
-      <screen x="0" y="30" width="1920" height="1050" />
+    <state x="2555" y="171" width="800" height="569" key="Vcs.Push.Dialog.v2/1920.0.1920.1080/0.30.1920.1050@1920.0.1920.1080" timestamp="1594483492029" />
+    <state x="2530" y="347" key="com.intellij.ide.util.TipDialog" timestamp="1594591564424">
+      <screen x="1920" y="0" width="1920" height="1080" />
     </state>
     <state x="610" y="367" key="com.intellij.ide.util.TipDialog/1920.0.1920.1080/0.30.1920.1050@0.30.1920.1050" timestamp="1594332934411" />
+    <state x="2530" y="347" key="com.intellij.ide.util.TipDialog/1920.0.1920.1080/0.30.1920.1050@1920.0.1920.1080" timestamp="1594591564424" />
     <state x="447" y="203" width="1403" height="990" key="dock-window-1" timestamp="1593929040211">
       <screen x="0" y="30" width="1920" height="1050" />
     </state>
@@ -127,9 +220,10 @@
       <screen x="1920" y="0" width="1920" height="1080" />
     </state>
     <state x="2353" y="172" width="1403" height="990" key="dock-window-2/1920.0.1920.1080/0.30.1920.1050@0.30.1920.1050" timestamp="1593929056943" />
-    <state x="2136" y="304" width="1389" height="606" key="new project wizard" timestamp="1593924820942">
+    <state x="2136" y="304" width="1389" height="606" key="new project wizard" timestamp="1594591834483">
       <screen x="1920" y="0" width="1920" height="1080" />
     </state>
     <state x="2136" y="304" width="1389" height="606" key="new project wizard/1920.0.1920.1080/0.30.1920.1050@0.30.1920.1050" timestamp="1593924820942" />
+    <state x="2136" y="304" key="new project wizard/1920.0.1920.1080/0.30.1920.1050@1920.0.1920.1080" timestamp="1594591834483" />
   </component>
 </project>

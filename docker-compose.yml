@@ -1,0 +1,23 @@
+#indica la version de Docker Compose utilizada
+version: '3.7'
+#Bloque de servicios, indica los contenedores a utilizar.
+services:
+  app-web:       #nombre del servicio
+    image: saulfeliciano/encuestaweb #imagen utilizada.
+    ports:          #puertos que estaran expuestos.
+      - 8080:8080
+    environment:    #variable de ambiente
+      - spring.datasource.url=jdbc:mysql://base-datos-app-web:3306/encuestaweb
+    networks:    #red para conectar los equipos.
+      - red-app
+  app-web2:       #nombre del servicio
+    image: saulfeliciano/encuestaweb #imagen utilizada.
+    ports:          #puertos que estaran expuestos.
+      - 8081:8081
+    environment:    #variable de ambiente
+      - spring.datasource.url=jdbc:mysql://base-datos-app-web:3306/encuestaweb
+    networks:    #red para conectar los equipos.
+      - red-app
+
+networks:  #bloque para las redes
+  red-app:   #indicando la red definida
